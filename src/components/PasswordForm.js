@@ -9,10 +9,15 @@ function PasswordForm() {
     specialChars: false,
   });
 
+  // update length state
+  const handleLength = (event) => {
+    console.log(event.target.value)
+    setLength(event.target.value);
+  }
+
+  // update options state through toggle switches
   const handleCheck = (event) => {
     const { name, checked } = event.target;
-
-    console.log(name, checked);
 
     setOptions({
       ...options,
@@ -27,9 +32,10 @@ function PasswordForm() {
         <p className="mb-3">LENGTH</p>
         <input
           type="range"
-          min={8}
-          max="100"
-          // value="40"
+          min="8"
+          max="32"
+          value={length}
+          onChange={handleLength}
           className="range range-primary transform scale-y-105"
         />
       </div>
