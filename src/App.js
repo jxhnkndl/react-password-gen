@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col justify-between">
       <Header />
-      <main className="container px-6">
+      <main className="container px-6 m-auto">
         <PasswordDisplay />
         <PasswordForm />
       </main>
