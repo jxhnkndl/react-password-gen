@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import PasswordContext from '../context/PasswordContext';
 
 function PasswordForm() {
   const [length, setLength] = useState(0);
@@ -9,11 +10,13 @@ function PasswordForm() {
     specialChars: false,
   });
 
+  const { generatePassword } = useContext(PasswordContext);
+
   // update length state
   const handleLength = (event) => {
-    console.log(event.target.value)
+    console.log(event.target.value);
     setLength(event.target.value);
-  }
+  };
 
   // update options state through toggle switches
   const handleCheck = (event) => {
@@ -23,6 +26,12 @@ function PasswordForm() {
       ...options,
       [name]: checked,
     });
+  };
+
+  // pass length and password options to password context
+  // and generate password
+  const handleSubmit = (event) => {
+    generatePassword(length, options);
   };
 
   return (
@@ -91,6 +100,9 @@ function PasswordForm() {
           />
         </label>
       </div>
+      <button className="btn btn-primary btn-block mt-4" onClick={handleSubmit}>
+        Generate Password
+      </button>
     </section>
   );
 }
