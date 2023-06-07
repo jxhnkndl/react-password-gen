@@ -5,20 +5,12 @@ const PasswordContext = createContext();
 
 // export password context provider
 export const PasswordProvider = ({ children }) => {
-  const [length, setLength] = useState(0);
-  const [uppercase, setUppercase] = useState(false);
-  const [lowercase, setLowercase] = useState(false);
-  const [numbers, setNumbers] = useState(false);
-  const [specialChars, setSpecialChars] = useState(false);
+  const [password, setPassword] = useState(0);
 
   return (
     <PasswordContext.Provider
       value={{
-        length,
-        uppercase,
-        lowercase,
-        numbers,
-        specialChars,
+        password,
       }}
     >
       {children}
