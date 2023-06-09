@@ -11,11 +11,11 @@ function PasswordForm() {
   });
   const [validOptions, setValidOptions] = useState(false);
 
-  const { password, generatePassword } = useContext(PasswordContext);
+  const { password, generatePassword, clearPassword } =
+    useContext(PasswordContext);
 
   // update length state
   const handleLength = (event) => {
-    console.log(event.target.value);
     setLength(event.target.value);
   };
 
@@ -46,6 +46,18 @@ function PasswordForm() {
   // and generate password
   const handleSubmit = (event) => {
     generatePassword(length, options);
+  };
+
+  // reset password options and clear password from ui
+  const handleClear = () => {
+    setLength(8);
+    setOptions({
+      lowercase: false,
+      uppercase: false,
+      numbers: false,
+      specialChars: false,
+    });
+    clearPassword('');
   };
 
   return (
@@ -122,7 +134,10 @@ function PasswordForm() {
         Generate Password
       </button>
       {password && (
-        <button className="btn btn-neutral btn-block mt-4">
+        <button
+          className="btn btn-neutral btn-block mt-4"
+          onClick={handleClear}
+        >
           Clear Password
         </button>
       )}

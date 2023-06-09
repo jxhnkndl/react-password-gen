@@ -35,11 +35,17 @@ export const PasswordProvider = ({ children }) => {
     setPassword(passwordChars);
   };
 
+  // clear password from state
+  const clearPassword = () => {
+    setPassword('');
+  }
+
   return (
     <PasswordContext.Provider
       value={{
         password,
         generatePassword,
+        clearPassword
       }}
     >
       {children}
