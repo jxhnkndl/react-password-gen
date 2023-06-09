@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import PasswordContext from '../context/PasswordContext';
 
 function PasswordForm() {
-  const [length, setLength] = useState(0);
+  const [length, setLength] = useState(8);
   const [options, setOptions] = useState({
     lowercase: false,
     uppercase: false,
