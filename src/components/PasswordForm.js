@@ -31,7 +31,18 @@ function PasswordForm() {
   // pass length and password options to password context
   // and generate password
   const handleSubmit = (event) => {
-    generatePassword(length, options);
+    // check that user has selected at least one type of character
+    const areInvalidOptions = Object.values(options).every(
+      (option) => option === false
+    );
+
+    // display alert if user hasn't selected a character type
+    // generate password if options are valid
+    if (areInvalidOptions) {
+      console.log("Please select at least one character type")
+    } else {
+      generatePassword(length, options);
+    }
   };
 
   return (

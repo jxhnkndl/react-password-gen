@@ -30,7 +30,6 @@ export const PasswordProvider = ({ children }) => {
       let nextChar = charChoices[randomIndex];
 
       passwordChars = passwordChars + nextChar;
-      console.log(passwordChars);
     }
 
     setPassword(passwordChars);
