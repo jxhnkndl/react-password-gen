@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PasswordContext from '../context/PasswordContext';
 
 function PasswordForm() {
@@ -9,8 +9,9 @@ function PasswordForm() {
     numbers: false,
     specialChars: false,
   });
+  const [validOptions, setValidOptions] = useState(false);
 
-  const { generatePassword } = useContext(PasswordContext);
+  const { password, generatePassword } = useContext(PasswordContext);
 
   // update length state
   const handleLength = (event) => {
@@ -28,21 +29,23 @@ function PasswordForm() {
     });
   };
 
+  // check whether user has selected at least one character type
+  useEffect(() => {
+    const areValidOptions = Object.values(options).some(
+      (option) => option !== false
+    );
+
+    if (areValidOptions) {
+      setValidOptions(true);
+    } else {
+      setValidOptions(false);
+    }
+  }, [options]);
+
   // pass length and password options to password context
   // and generate password
   const handleSubmit = (event) => {
-    // check that user has selected at least one type of character
-    const areInvalidOptions = Object.values(options).every(
-      (option) => option === false
-    );
-
-    // display alert if user hasn't selected a character type
-    // generate password if options are valid
-    if (areInvalidOptions) {
-      console.log("Please select at least one character type")
-    } else {
-      generatePassword(length, options);
-    }
+    generatePassword(length, options);
   };
 
   return (
@@ -111,9 +114,18 @@ function PasswordForm() {
           />
         </label>
       </div>
-      <button className="btn btn-neutral btn-block mt-4" onClick={handleSubmit}>
+      <button
+        disabled={!validOptions && 'disabled'}
+        className={`btn btn-block mt-4 ${validOptions && 'btn-accent'}`}
+        onClick={handleSubmit}
+      >
         Generate Password
       </button>
+      {password && (
+        <button className="btn btn-neutral btn-block mt-4">
+          Clear Password
+        </button>
+      )}
     </section>
   );
 }
