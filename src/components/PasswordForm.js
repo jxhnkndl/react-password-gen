@@ -61,7 +61,7 @@ function PasswordForm() {
   };
 
   return (
-    <section className="py-8">
+    <section className="pt-4 pb-8">
       {/* password length */}
       <div className="form-control px-1 mb-8">
         <p className="mb-3">LENGTH</p>
