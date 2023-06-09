@@ -45,7 +45,7 @@ function PasswordForm() {
           max="32"
           value={length}
           onChange={handleLength}
-          className="range range-primary transform scale-y-105"
+          className="range range-accent transform scale-y-105"
         />
       </div>
       {/* lowercase letters */}
@@ -55,7 +55,7 @@ function PasswordForm() {
           <input
             name="lowercase"
             type="checkbox"
-            className="toggle h-6 w-12 transform scale-125 mr-1"
+            className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
             checked={options.lowercase}
             onChange={handleCheck}
           />
@@ -68,7 +68,7 @@ function PasswordForm() {
           <input
             name="uppercase"
             type="checkbox"
-            className="toggle h-6 w-12 transform scale-125 mr-1"
+            className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
             checked={options.uppercase}
             onChange={handleCheck}
           />
@@ -81,7 +81,7 @@ function PasswordForm() {
           <input
             name="numbers"
             type="checkbox"
-            className="toggle h-6 w-12 transform scale-125 mr-1"
+            className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
             checked={options.numbers}
             onChange={handleCheck}
           />
@@ -94,13 +94,13 @@ function PasswordForm() {
           <input
             name="specialChars"
             type="checkbox"
-            className="toggle h-6 w-12 transform scale-125 mr-1"
+            className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
             checked={options.specialChars}
             onChange={handleCheck}
           />
         </label>
       </div>
-      <button className="btn btn-primary btn-block mt-4" onClick={handleSubmit}>
+      <button className="btn btn-neutral btn-block mt-4" onClick={handleSubmit}>
         Generate Password
       </button>
     </section>

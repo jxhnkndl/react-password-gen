@@ -8,7 +8,7 @@ import { PasswordProvider } from './context/PasswordContext';
 function App() {
   return (
     <PasswordProvider>
-      <div className="min-h-screen flex flex-col justify-between">
+      <div className="min-h-screen flex flex-col justify-between bg-gradient-to-br from-base-300 to-base-100">
         <Header />
         <main className="container px-6 m-auto">
           <PasswordDisplay />
