@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import PasswordField from './PasswordField';
 import { FaUnlock } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import { FaRegCopy } from 'react-icons/fa';
@@ -33,7 +34,7 @@ function PasswordDisplay() {
 
   return (
     <section
-      className="py-8"
+      className="py-4"
       style={{ cursor: `${password ? 'pointer' : 'arrow'}` }}
       onClick={handleCopy}
     >
@@ -55,15 +56,7 @@ function PasswordDisplay() {
       </div>
 
       {/* display password or placeholder depending on password state */}
-      <div className="flex justify-center">
-        {password ? (
-          <p className="text-2xl text-center text-semibold text-accent-content">
-            {password}
-          </p>
-        ) : (
-          <p className="text-2xl text-center opacity-30">*** PASSWORD ***</p>
-        )}
-      </div>
+      <PasswordField />
     </section>
   );
 }
