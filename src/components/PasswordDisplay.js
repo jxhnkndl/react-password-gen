@@ -18,7 +18,6 @@ function PasswordDisplay() {
     if (password) {
       try {
         await navigator.clipboard.writeText(password);
-        console.log(`Copied Password: ${password}`);
 
         setAlert({
           ...alert,
@@ -42,7 +41,7 @@ function PasswordDisplay() {
         <div className="indicator">
           {/* badge alert display when user copies password */}
           {alert.show && (
-            <span className="indicator-item indicator-top indicator-end absolute right-[-30px] top-[-15px] badge badge-warning">
+            <span className="indicator-item indicator-bottom indicator-center absolute bottom-[-5px] badge badge-warning p-4">
               <FaRegCopy className="mr-2" />
               Copied!
             </span>
