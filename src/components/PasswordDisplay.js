@@ -3,6 +3,7 @@ import PasswordField from './PasswordField';
 import { FaUnlock } from 'react-icons/fa';
 import { FaLock } from 'react-icons/fa';
 import { FaRegCopy } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import PasswordContext from '../context/PasswordContext';
 
 function PasswordDisplay() {
@@ -41,10 +42,21 @@ function PasswordDisplay() {
         <div className="indicator">
           {/* badge alert display when user copies password */}
           {alert.show && (
-            <span className="indicator-item indicator-bottom indicator-center absolute bottom-[-5px] badge badge-warning p-4">
-              <FaRegCopy className="mr-2" />
-              Copied!
-            </span>
+            <motion.div
+              initial={{ x: 64, y: 10 }}
+              animate={{ x: 64, y: 2 }}
+              transition={{
+                type: 'spring',
+                stiffness: 150,
+                damping: 5,
+                duration: 0.15,
+              }}
+            >
+              <span className="indicator-item indicator-bottom indicator-center absolute badge badge-warning p-4">
+                <FaRegCopy className="mr-2" />
+                Copied!
+              </span>
+            </motion.div>
           )}
           {password ? (
             <FaLock className="text-9xl text-accent" />
