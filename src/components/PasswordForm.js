@@ -63,7 +63,7 @@ function PasswordForm() {
 
   return (
     <section className="pt-4 pb-8">
-      <div className="card bg-base-100 shadow-xl px-4 py-6">
+      <div className="card bg-base-300 shadow-xl px-4 py-6">
         {/* password length */}
         <motion.div
           initial={{ opacity: 0, transform: 'translateY(20px)' }}
