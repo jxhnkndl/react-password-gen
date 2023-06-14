@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { motion } from 'framer-motion';
 import PasswordContext from '../context/PasswordContext';
 
 function PasswordForm() {
@@ -64,79 +65,115 @@ function PasswordForm() {
     <section className="pt-4 pb-8">
       <div className="card bg-base-100 shadow-xl px-4 py-6">
         {/* password length */}
-        <div className="form-control px-1 mb-8">
-          <div className="flex justify-between mb-3">
-            <p>LENGTH</p>
-            <p>{length} Characters</p>
-          </div>
-          <input
-            type="range"
-            min="8"
-            max="32"
-            value={length}
-            onChange={handleLength}
-            className="range range-accent transform scale-y-105"
-          />
-        </div>
-        {/* lowercase letters */}
-        <div className="form-control my-3">
-          <label className="label cursor-pointer">
-            <span className="">LOWERCASE LETTERS</span>
-            <input
-              name="lowercase"
-              type="checkbox"
-              className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
-              checked={options.lowercase}
-              onChange={handleCheck}
-            />
-          </label>
-        </div>
-        {/* uppercase letters */}
-        <div className="form-control my-3">
-          <label className="label cursor-pointer">
-            <span className="">UPPERCASE LETTERS</span>
-            <input
-              name="uppercase"
-              type="checkbox"
-              className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
-              checked={options.uppercase}
-              onChange={handleCheck}
-            />
-          </label>
-        </div>
-        {/* numbers */}
-        <div className="form-control my-3">
-          <label className="label cursor-pointer">
-            <span className="">NUMBERS</span>
-            <input
-              name="numbers"
-              type="checkbox"
-              className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
-              checked={options.numbers}
-              onChange={handleCheck}
-            />
-          </label>
-        </div>
-        {/* special characters */}
-        <div className="form-control my-3">
-          <label className="label cursor-pointer">
-            <span className="">SPECIAL CHARACTERS</span>
-            <input
-              name="specialChars"
-              type="checkbox"
-              className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
-              checked={options.specialChars}
-              onChange={handleCheck}
-            />
-          </label>
-        </div>
-        <button
-          disabled={!validOptions && 'disabled'}
-          className={`btn btn-block mt-4 ${validOptions && 'btn-accent'}`}
-          onClick={handleSubmit}
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5 }}
         >
-          Generate Password
-        </button>
+          <div className="form-control px-1 mb-8">
+            <div className="flex justify-between mb-3">
+              <p>LENGTH</p>
+              <p>{length} Characters</p>
+            </div>
+            <input
+              type="range"
+              min="8"
+              max="32"
+              value={length}
+              onChange={handleLength}
+              className="range range-accent transform scale-y-105"
+            />
+          </div>
+        </motion.div>
+        {/* lowercase letters */}
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <div className="form-control my-3">
+            <label className="label cursor-pointer">
+              <span className="">LOWERCASE LETTERS</span>
+              <input
+                name="lowercase"
+                type="checkbox"
+                className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
+                checked={options.lowercase}
+                onChange={handleCheck}
+              />
+            </label>
+          </div>
+        </motion.div>
+        {/* uppercase letters */}
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          <div className="form-control my-3">
+            <label className="label cursor-pointer">
+              <span className="">UPPERCASE LETTERS</span>
+              <input
+                name="uppercase"
+                type="checkbox"
+                className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
+                checked={options.uppercase}
+                onChange={handleCheck}
+              />
+            </label>
+          </div>
+        </motion.div>
+        {/* numbers */}
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="form-control my-3">
+            <label className="label cursor-pointer">
+              <span className="">NUMBERS</span>
+              <input
+                name="numbers"
+                type="checkbox"
+                className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
+                checked={options.numbers}
+                onChange={handleCheck}
+              />
+            </label>
+          </div>
+        </motion.div>
+        {/* special characters */}
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+        >
+          <div className="form-control my-3">
+            <label className="label cursor-pointer">
+              <span className="">SPECIAL CHARACTERS</span>
+              <input
+                name="specialChars"
+                type="checkbox"
+                className="toggle toggle-accent h-6 w-12 transform scale-125 mr-1"
+                checked={options.specialChars}
+                onChange={handleCheck}
+              />
+            </label>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <button
+            disabled={!validOptions && 'disabled'}
+            className={`btn btn-block mt-4 ${validOptions && 'btn-accent'}`}
+            onClick={handleSubmit}
+          >
+            Generate Password
+          </button>
+        </motion.div>
         {password && (
           <button
             className="btn btn-neutral btn-block mt-4"
