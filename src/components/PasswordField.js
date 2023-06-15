@@ -22,7 +22,7 @@ function PasswordField() {
     <div className="flex justify-center min-h-16">
       {/* placeholder text */}
       {!password && (
-        <p className="font-mono text-2xl text-center text-semibold text-accent-content">
+        <div className="font-mono text-2xl text-center text-semibold text-accent-content">
           <Typewriter
             onInit={(typewriter) => {
               setTimeout(() => {
@@ -31,24 +31,24 @@ function PasswordField() {
             }}
             options={{ delay: 35, cursor: '' }}
           />
-        </p>
+        </div>
       )}
 
       {/* short passwords display on one line */}
       {password.length > 0 && password.length <= 16 && (
-        <p className="font-mono text-2xl text-center text-semibold text-accent-content">
+        <div className="font-mono text-2xl text-center text-semibold text-accent-content">
           <Typewriter
             onInit={(typewriter) => {
               typewriter.deleteAll().typeString(password).start();
             }}
             options={{ delay: 35, cursor: '' }}
           />
-        </p>
+        </div>
       )}
 
       {/* long passwords split across two lines */}
       {password.length > 16 && (
-        <p className="font-mono text-2xl text-center text-semibold text-accent-content">
+        <div className="font-mono text-2xl text-center text-semibold text-accent-content">
           <span className="block">
             <Typewriter
               onInit={(typewriter) => {
@@ -70,7 +70,7 @@ function PasswordField() {
               options={{ delay: 35, cursor: '' }}
             />
           </span>
-        </p>
+        </div>
       )}
     </div>
   );
