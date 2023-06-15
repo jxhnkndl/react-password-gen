@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Typewriter from 'typewriter-effect';
 import PasswordContext from '../context/PasswordContext';
 
 function PasswordField() {
@@ -19,18 +20,56 @@ function PasswordField() {
 
   return (
     <div className="flex justify-center">
-      {/* short passwords display on one line */}
-      {password.length <= 16 && (
+      {/* placeholder text */}
+      {!password && (
         <p className="font-mono text-2xl text-center text-semibold text-accent-content">
-          {password}
+          <Typewriter
+            onInit={(typewriter) => {
+              setTimeout(() => {
+                typewriter.typeString('***************').start();
+              }, 200)
+            }}
+            options={{ delay: 35, cursor: '' }}
+          />
+        </p>
+      )}
+
+      {/* short passwords display on one line */}
+      {password.length > 0 && password.length <= 16 && (
+        <p className="font-mono text-2xl text-center text-semibold text-accent-content">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.deleteAll().typeString(password).start();
+            }}
+            options={{ delay: 35, cursor: '' }}
+          />
         </p>
       )}
 
       {/* long passwords split across two lines */}
       {password.length > 16 && (
         <p className="font-mono text-2xl text-center text-semibold text-accent-content">
-          <span className="block">{passwordTop}</span>
-          <span className="block">{passwordBottom}</span>
+          <span className="block">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter.deleteAll().typeString(passwordTop).start();
+              }}
+              options={{ delay: 35, cursor: '' }}
+            />
+          </span>
+          <span className="block">
+            <Typewriter
+              onInit={(typewriter) => {
+                const delay = midpoint * 50;
+                typewriter.deleteAll();
+
+                setTimeout(() => {
+                  typewriter.typeString(passwordBottom).start();
+                }, delay);
+              }}
+              options={{ delay: 35, cursor: '' }}
+            />
+          </span>
         </p>
       )}
     </div>
