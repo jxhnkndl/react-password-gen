@@ -164,6 +164,19 @@ function PasswordForm() {
         <motion.div
           initial={{ opacity: 0, transform: 'translateY(20px)' }}
           animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+        >
+          <button
+            // disabled={!validOptions && 'disabled'}
+            className="btn btn-neutral btn-block mt-4"
+            onClick={handleClear}
+          >
+            {password.length > 0 ? 'Clear Password' : 'Reset Options'}
+          </button>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <button
@@ -174,14 +187,6 @@ function PasswordForm() {
             Generate Password
           </button>
         </motion.div>
-        {password && (
-          <button
-            className="btn btn-neutral btn-block mt-4"
-            onClick={handleClear}
-          >
-            Clear Password
-          </button>
-        )}
       </div>
     </section>
   );

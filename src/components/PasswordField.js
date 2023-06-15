@@ -19,7 +19,7 @@ function PasswordField() {
   let passwordBottom = password.slice(midpoint);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center min-h-16">
       {/* placeholder text */}
       {!password && (
         <p className="font-mono text-2xl text-center text-semibold text-accent-content">
@@ -27,7 +27,7 @@ function PasswordField() {
             onInit={(typewriter) => {
               setTimeout(() => {
                 typewriter.typeString('***************').start();
-              }, 200)
+              }, 300)
             }}
             options={{ delay: 35, cursor: '' }}
           />
