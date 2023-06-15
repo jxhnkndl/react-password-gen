@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-password-gen/static/css/main.d952e584.css",
-    "main.js": "/react-password-gen/static/js/main.ba8ed7fd.js",
+    "main.js": "/react-password-gen/static/js/main.9f0065e2.js",
     "index.html": "/react-password-gen/index.html",
     "main.d952e584.css.map": "/react-password-gen/static/css/main.d952e584.css.map",
-    "main.ba8ed7fd.js.map": "/react-password-gen/static/js/main.ba8ed7fd.js.map"
+    "main.9f0065e2.js.map": "/react-password-gen/static/js/main.9f0065e2.js.map"
   },
   "entrypoints": [
     "static/css/main.d952e584.css",
-    "static/js/main.ba8ed7fd.js"
+    "static/js/main.9f0065e2.js"
   ]
 }
