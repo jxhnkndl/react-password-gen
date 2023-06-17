@@ -40,9 +40,11 @@ Responsive mobile first application for dynamically generating random passwords 
 I chose to build a small app based on a logic problem that I already had a strong understanding of how to solve so that I could focus on refreshing my React workflow, practice using Tailwind CSS as my primary styling tool, and learn how to apply simple animations to React components using Framer Motion. The primary goal with this app was to take a simple concept and create as complete and elegant a user experience as possible. I think that I succeeded in avoiding unnecessary alert boxes or modals by incorporating input validation directly into the form components through styling and disabling/enabling buttons. I also really enjoyed the challenge of figuring out how to implement basic component animations and a simple light/dark mode theme to enhance the overall user experience.
 
 ## Takeaways
+* This was a great refresher on how to use the Context API to manage global state.
+
 * To get the typing animation to run every time the password state changed, I had to learn how to use the `useRef()` to capture a reference to the `Typewriter` instances in the `PasswordField` component so that I could re-trigger the animation methods in a side effect triggered by the password state change. This was definitely a big challenge for a small feature but since `useRef()` was a hook I definitely didn't understand, I think it was worth it.
 
-* This was a great refresher on how to use the Context API to manage global state.
+* I didn't know too much about how to animate components before building this app but I knew that I wanted to learn a few simple tricks that I'd seen on other websites. It took some experimenting to start getting the hang of Framer Motion but I was satisfied with the way that the entrance animations and the bouncing badge that appears when the password is clicked/tapped turned out. I think this will be easier to implement in my next project than it was in this one.
 
 * Implementing Tailwind CSS and DaisyUI reduced amount of time it took me to design the user interface quite a bit. I think that even without the component library, I would still choose to use Tailwind as my CSS framework. I like that it's more flexible than other libraries like Bootstrap and a little bit faster to get up and running than raw CSS would be.
 
