@@ -22,19 +22,19 @@ Responsive mobile first application for dynamically generating random passwords 
 [Visit the deployed application here!](https://jxhnkndl.github.io/react-password-gen/)
 
 ## Features
-✅  User can define parameters for final generated password
+* User can define parameters for final generated password
 
-✅  User can click/tap password display or lock icon to copy password to clipboard
+* User can click/tap password display or lock icon to copy password to clipboard
 
-✅  User can toggle between light and dark UI themes
+* User can toggle between light and dark UI themes
 
-✅  UI theme preference persists in local storage
+* UI theme preference persists in local storage
 
-✅  UI provides input validation feedback semantically through the styling of form components and reaction badges
+* UI provides input validation feedback semantically through the styling of form components and reaction badges
 
-✅  UI design is fully responsive and optimized for mobile devices
+* UI design is fully responsive and optimized for mobile devices
 
-✅  Main UI components have subtle animations to create an enjoyable user experience
+* Main UI components have subtle animations to create an enjoyable user experience
 
 ## Reasons For Development
 I chose to build a small app based on a logic problem that I already had a strong understanding of how to solve so that I could focus on refreshing my React workflow, practice using Tailwind CSS as my primary styling tool, and learn how to apply simple animations to React components using Framer Motion. The primary goal with this app was to take a simple concept and create as complete and elegant a user experience as possible. I think that I succeeded in avoiding unnecessary alert boxes or modals by incorporating input validation directly into the form components through styling and disabling/enabling buttons. I also really enjoyed the challenge of figuring out how to implement basic component animations and a simple light/dark mode theme to enhance the overall user experience.
